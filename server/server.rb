@@ -10,7 +10,8 @@ class Server
     require_relative("./settings")
     Server.config = Settings
   end
-  
+  set :public_folder, Server.config::PUBLIC
+
   get "/qunit" do
     return 404 unless development?
     @paths = Server.config::JS_PATHS

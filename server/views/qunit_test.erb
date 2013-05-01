@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>QUnit Test Suite</title>
+  <link rel="stylesheet" href="../lib/qunit/themes/gabe.css">
+  <script src="../lib/qunit/qunit.js"></script>
+
+  <%  @script_files.each() do |key, files|  %>
+  <%  files.each() do |file|  %>
+  <%=      '<script src="../' << @paths[key] <<'/' << file << '"> </script>' %>
+  <%    end  %>
+  <%  end  %>
+
+</head>
+<body>
+  <div id="qunit"></div>
+  <div id="qunit-fixture">test markup</div>
+</body>
+</html>

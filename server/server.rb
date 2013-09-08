@@ -1,7 +1,7 @@
-require 'sinatra'
+require 'sinatra/base'
 require_relative 'file_tasks'
 
-class Server
+class Server < Sinatra::Base
   class << self
     attr_accessor :config
   end
@@ -13,18 +13,18 @@ class Server
   set :public_folder, Server.config::PUBLIC
 
   get "/qunit" do
-    return 404 unless development?
+    return 404 unless settings.development?
     @paths = Server.config::JS_PATHS
     @script_files = {}
     public_folder = Server.config::PUBLIC
-    
+
     @paths.each do |key, path|
       FileTasks::list_files(File.join(public_folder, path)) do |file|
         @script_files[key] = [] if @script_files[key].nil?
         @script_files[key].push file if file[/.js$/]
-      end   
+      end
     end
-    
+
     erb :qunit_test
   end
 end

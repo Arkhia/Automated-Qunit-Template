@@ -1,3 +1,1 @@
-This a template to go with the blog post at: http://bestbrains.dk/poster/blog/making-your-qunit-experience-a-little-smoother/
-
-It contains the basic structure for automating QUnit test scaffolding, so you don't need to add all your test files one at a time. It'll instead, using simple templating, read the files from directory and add them depending on location in predefined settings. This means you can just add your tests, write them, and they'll automatically be included the next time you run your QUnit tests.
+This template contains the basic structure for automating QUnit test scaffolding, so you don't need to add all your test files one at a time. It'll instead, using simple templating, read the files from directory and add them depending on location in predefined settings. This means you can just add your tests, write them, and they'll automatically be included the next time you run your QUnit tests.
